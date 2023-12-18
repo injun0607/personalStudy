@@ -1,4 +1,4 @@
-package programmers.level1;
+package baekjoon.tree.programmers.level1;
 
 import java.util.*;
 

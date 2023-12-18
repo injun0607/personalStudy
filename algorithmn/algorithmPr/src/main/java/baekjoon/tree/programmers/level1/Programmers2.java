@@ -1,4 +1,4 @@
-package programmers.level1;
+package baekjoon.tree.programmers.level1;
 
 /**
  * 문제 : 지나다니는 길을 'O', 장애물을 'X'로 나타낸 직사각형 격자 모양의 공원에서 로봇 강아지가 산책을 하려합니다.
