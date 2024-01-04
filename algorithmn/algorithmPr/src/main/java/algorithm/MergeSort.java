@@ -9,7 +9,7 @@ package algorithm;
  */
 public class MergeSort {
     public static void main(String[] args) {
-        int[] list = {3,6,7,0,1,5,11,23,44,30};
+        int[] list = {21,10,12,20,25,13,15,22};
         int[] sortedList = dividedAndMerge(list);
         for (int i : sortedList) {
             System.out.println(i);
