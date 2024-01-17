@@ -20,10 +20,10 @@ console.log(hee)
 
 //Constant,read
 
-const co = 19;
+const cu = 19;
 const size = 20.1;
 
-console.log(`value: ${co}, type: ${typeof co}`)
+console.log(`value: ${cu}, type: ${typeof cu}`)
 console.log(`value: ${size}, type: ${typeof size}`)
 //Note!
 //Immutable data types: premitive types, frozen object
