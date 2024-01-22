@@ -30,8 +30,8 @@ injun.speak();
 
 //Getter와 Setter
 class User{
-
-
+    age;
+    _age;
     constructor(firstName, lastName, age) {
         this.firstName = firstName
         this.lastName = lastName;
@@ -49,12 +49,15 @@ class User{
     //재귀를 방지하기위해 변수를 _를 줘서 방지한다.
     set age(value) {
         this._age = value < 0 ? 0 : value;
+        console.log('set age = ' + this._age);
     }
 
 }
 
 const user1 = new User('Steve', 'Job', -1);
 console.log('userage : '+ user1.age);
+console.log(`this_.age = ${user1._age}`)
+
 
 
 //3.Fields(public, private)
@@ -69,3 +72,75 @@ const experiment = new Experiment();
 console.log(experiment.publicField);
 console.log(experiment.privateField);
 
+//4.Static properites and methods
+//Too soon!
+class Article{
+    static publisher = 'injun Coding';
+
+    constructor(articleNumber) {
+        this.articleNumber = articleNumber;
+    }
+
+    static printPublicsher() {
+        console.log(Article.publisher);
+    }
+}
+
+const article1 = new Article(1);
+const article2 = new Article(2);
+console.log(Article.publisher)
+Article.printPublicsher();
+
+console.log('--------5번 입니다---------')
+//5. 상속
+//a way for one class to extend another class.
+class Shape{
+    constructor(width, height, color) {
+        this.width = width;
+        this.height = height;
+        this.cololr = color;
+    }
+
+    draw() {
+        console.log(`drawing ${this.cololr} color of`)
+    }
+
+    getArea() {
+        return this.width * this.height;
+    }
+
+}
+
+class Rectangle extends Shape {
+
+}
+
+class Triangle extends Shape {
+
+    draw() {
+        super.draw();
+        console.log('triangle des')
+    }
+
+    getArea() {
+        return this.width * this.height * 1/2;
+    }
+}
+
+const rectangle = new Rectangle(20, 20, 'blue');
+rectangle.draw();
+
+const triangle = new Triangle(20, 20, 'pink');
+triangle.draw();
+
+
+console.log(`rectangle area : ${rectangle.getArea()}`);
+console.log(`triangle area : ${triangle.getArea()}`);
+
+console.log('------------6번입니다----------')
+//6.Class checking instance Of
+console.log(rectangle instanceof Rectangle)
+console.log(triangle instanceof Rectangle)
+console.log(triangle instanceof Triangle)
+console.log(triangle instanceof Shape)
+console.log(triangle instanceof Object)
