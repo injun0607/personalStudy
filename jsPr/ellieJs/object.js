@@ -16,7 +16,7 @@ function print(person) {
 
 const injun = {
     name: 'injun',
-    age: 4
+    age: 4,
 }
 
 print(injun);
