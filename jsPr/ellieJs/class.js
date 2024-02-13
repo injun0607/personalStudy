@@ -30,8 +30,7 @@ injun.speak();
 
 //Getter와 Setter
 class User{
-    age;
-    _age;
+
     constructor(firstName, lastName, age) {
         this.firstName = firstName
         this.lastName = lastName;
