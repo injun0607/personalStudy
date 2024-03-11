@@ -165,3 +165,33 @@ console.log(arr2);
 
 let arr3 = [undefined, undefined, undefined];
 console.log(arr3);
+
+console.log("======빈 요소와 배열의 순회 =========")
+arr1 = [undefined, 1];
+arr2 = [];
+
+arr2[1] = 1;
+
+arr1.forEach((v, i) => console.log(v, i));
+arr2.forEach((v, i) => console.log(v, i));
+console.log("=======map=======")
+arr1.map((v, i) => console.log(v + i));
+arr2.map((v, i) => console.log(v + i));
+
+console.log("=============filter==========")
+arr1.filter((v) => console.log(!v));
+arr2.filter((v) => console.log(!v));
+
+console.log("=============reduce============")
+console.log(arr1.reduce(function (p, c, i) {
+    return p + c + i
+}, ''));
+console.log("==========undefined와 null값 비교=========")
+let n = null;
+console.log(typeof n);
+
+console.log(n == undefined);
+console.log(n == null);
+
+console.log(n === undefined);
+console.log(n === null);
