@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.Random;
 
 public class AutoKeyMain extends JFrame{
 
@@ -70,7 +71,7 @@ public class AutoKeyMain extends JFrame{
                     robot.keyPress(KeyEvent.VK_CONTROL); //
                     robot.keyRelease(KeyEvent.VK_CONTROL); //
 
-                   
+
 
 
 
@@ -81,6 +82,38 @@ public class AutoKeyMain extends JFrame{
                 }
             }
         }).start();
+    }
+
+    private void patternOne() throws InterruptedException {
+        //윗키 누르기
+        //사용하는 키보드키는 CNTL
+        robot.keyPress(KeyEvent.VK_UP); //
+        Thread.sleep(createRandomNumber(801,600)); //0.8초에서 1.4초까지 랜덤숫자
+        robot.keyRelease(KeyEvent.VK_UP); //
+        Thread.sleep(createRandomNumber(101,200)); //0.1초에서 0.3초까지 랜덤숫자
+
+        //컨트롤 키 누르기
+        robot.keyPress(KeyEvent.VK_CONTROL); //
+        Thread.sleep(createRandomNumber(601,700)); //0.6초에서 1.3초까지 랜덤숫자
+        robot.keyRelease(KeyEvent.VK_CONTROL); //
+        Thread.sleep(createRandomNumber(101,150)); //0.1초에서 0.25초까지 랜덤숫자
+
+
+
+
+
+        //랜덤값으로 바꾸기
+        robot.keyPress(KeyEvent.VK_CONTROL); //
+        robot.keyRelease(KeyEvent.VK_CONTROL); //
+
+    }
+
+    private long createRandomNumber(int min, int max) {
+        //0.5초에서 1.0초까지 랜덤 숫자;
+
+        Random rand = new Random();
+        int randomNum = rand.nextInt(min)+max;
+        return (long) randomNum;
     }
 
     public static void main(String[] args) {
